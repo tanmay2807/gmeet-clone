@@ -8,6 +8,7 @@ const myPeer = new Peer(undefined,{
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
+    console.log(id);
 })
 
 socket.on("username", name=>{
