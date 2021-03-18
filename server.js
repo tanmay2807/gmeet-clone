@@ -1,17 +1,17 @@
 const express = require('express')
 const app = express();
-const { ExpressPeerServer } = require('peer');
+// const { ExpressPeerServer } = require('peer');
 const PORT = process.env.PORT || 3000
 var server = app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
 });
-const peerServer = ExpressPeerServer(server, {
-    path: '/'
-});
+// const peerServer = ExpressPeerServer(server, {
+//     path: '/'
+// });
 const io = require('socket.io')(server)
 
 const bodyParser = require("body-parser");
-app.use('/peerjs', peerServer);
+// app.use('/peerjs', peerServer);
 app.use(express.static("static"));
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
