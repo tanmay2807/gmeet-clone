@@ -1,11 +1,11 @@
 var socket = io.connect(window.location.hostname);
 
 const myPeer = new Peer(undefined,{
-    host: 'pacific-harbor-06452.herokuapp.com',
+    host: location.hostname,
     port: 443,
     secure: true,
-    path:'/'
-})
+    path:'/peerjs'
+});
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
