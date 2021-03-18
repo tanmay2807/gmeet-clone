@@ -1,0 +1,701 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body {
+  position: relative;
+}
+
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Poppins', sans-serif;
+  width: 35rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.intro h1 {
+  font-size: 5.5rem;
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.intro .options {
+  font-size: 1.5rem;
+  color: white;
+  width: 100%;
+}
+
+.intro .options form input {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  background-color: transparent;
+  margin: 0.5rem;
+  font-family: 'Poppins',sans-serif;
+  border-bottom: 1.5px solid white;
+}
+
+.intro .options form input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  font-size: 1.5rem;
+}
+
+.intro .options form input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  filter: brightness(110%);
+  font-size: 1.5rem;
+}
+
+.intro .options form input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  filter: brightness(110%);
+  font-size: 1.5rem;
+}
+
+.intro .options form input::placeholder {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  font-size: 1.5rem;
+}
+
+.intro .options form input:focus {
+  outline: none;
+}
+
+.intro .options form button {
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: rgba(84, 240, 201, 0.7);
+  border: 1px solid rgba(84, 240, 201, 0.7);
+  font-size: 1.5rem;
+  color: #222;
+  margin: 0.5rem;
+  font-family: 'Poppins',sans-serif;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+}
+
+.intro .options form button:hover {
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #444;
+}
+
+.intro .options .join {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1rem;
+  width: 100%;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.intro .options .host {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1rem;
+  width: 100%;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.intro .options .random {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1rem;
+  width: 100%;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.animation {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(120deg, #4d8ef7, #8a4af7);
+}
+
+.animation-box {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.animation li:nth-child(1) {
+  height: 1rem;
+  width: 1rem;
+  position: relative;
+  bottom: 100%;
+  left: 10%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.animation li:nth-child(2) {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  bottom: 100%;
+  left: 70%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.animation li:nth-child(3) {
+  height: 4rem;
+  width: 4rem;
+  position: relative;
+  bottom: 100%;
+  left: 30%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.animation li:nth-child(4) {
+  height: 8rem;
+  width: 8rem;
+  position: relative;
+  bottom: 100%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.animation li:nth-child(5) {
+  height: 10rem;
+  width: 10rem;
+  position: relative;
+  bottom: 100%;
+  left: 70%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.animation li:nth-child(6) {
+  height: 10rem;
+  width: 10rem;
+  position: relative;
+  bottom: 100%;
+  left: 0%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 10.5s;
+          animation-delay: 10.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+}
+
+.animation li:nth-child(7) {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  bottom: 100%;
+  left: 75%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+.animation li:nth-child(8) {
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  bottom: 100%;
+  left: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  list-style: none;
+  -webkit-animation-name: animate;
+          animation-name: animate;
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(130vh) rotate(0);
+            transform: translateY(130vh) rotate(0);
+  }
+  100% {
+    opacity: 0.5;
+    -webkit-transform: translateY(0) rotate(180deg);
+            transform: translateY(0) rotate(180deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(130vh) rotate(0);
+            transform: translateY(130vh) rotate(0);
+  }
+  100% {
+    opacity: 0.5;
+    -webkit-transform: translateY(0) rotate(180deg);
+            transform: translateY(0) rotate(180deg);
+  }
+}
+
+.display-no {
+  display: none;
+}
+
+.display-yes {
+  display: block;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  position: fixed;
+}
+
+.container .video {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+
+.container .video .video-you {
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .video .video-me {
+  position: absolute;
+  z-index: 5;
+  top: 1rem;
+  left: 1rem;
+  height: 40%;
+  width: 40%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.container .video .buttons {
+  position: absolute;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding: 0rem 4.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 5rem;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5rem;
+}
+
+.container .video .buttons .cancel {
+  margin: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #eb4034;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container .video .buttons .cancel .fa {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.container .video .buttons .mic {
+  margin: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container .video .buttons .mic .fa {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.container .video .buttons .vid {
+  margin: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container .video .buttons .vid .fa {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.container .message {
+  height: 100%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.container .message .room-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  padding: 1rem 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  border-radius: 1rem;
+}
+
+.container .message .room-info .roomcode {
+  font-size: 1.5rem;
+  color: #333;
+  padding: 3rem 0.5rem;
+}
+
+.container .message .room-info .close {
+  position: absolute;
+  top: 0.3rem;
+  cursor: pointer;
+  right: 0.2rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1rem;
+}
+
+.container .message .room-info .close:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container .message-window {
+  height: 93%;
+  width: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
+}
+
+.container .message-window .connected {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 1.2rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0.2rem 1rem;
+  background-color: #fff;
+  color: #444;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 1rem;
+  border-radius: 0.4rem;
+}
+
+.container .message-window .mymessage {
+  font-size: 1.5rem;
+  max-width: 25rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  max-width: 25rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem 1rem;
+  display: block;
+  background-color: rgba(206, 85, 242, 0.85);
+  color: #fff;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: 'Poppins', sans-serif;
+  margin: 0.5rem;
+  margin-left: 1rem;
+  border-radius: 0.8rem;
+  border-bottom-right-radius: 0rem;
+}
+
+.container .message-window .othermessage {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-size: 1.5rem;
+  max-width: 25rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #444;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: 'Poppins', sans-serif;
+  margin: 0.5rem;
+  margin-left: 1rem;
+  border-radius: 0.8rem;
+  border-bottom-left-radius: 0rem;
+}
+
+.container .message .form-container {
+  height: 7%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.container .message .form-container form {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .message .form-container form input {
+  height: 100%;
+  width: 90%;
+  margin: 0;
+  outline: none;
+  border: 1px solid white;
+  color: #222;
+}
+
+.container .message .form-container form button {
+  height: 100%;
+  width: 6%;
+  border: 1px solid #fff;
+  margin-left: 2%;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+}
+
+.container .message .form-container form button i {
+  color: #222;
+  height: 60%;
+  width: 100%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  font-size: 2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+/*# sourceMappingURL=style.css.map */

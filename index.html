@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.2/socket.io.js" defer integrity="sha512-YybopSVjZU0fe8TY4YDuQbP5bhwpGBE/T6eBUEZ0usM72IWBfWrgVI13qfX4V2A/W7Hdqnm7PIOYOwP9YHnICw==" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+    <title>Chat app</title>
+</head>
+<body>
+    <nav class="menu"></nav>
+    <section class="intro">
+        <h1>WELCOME !</h1>
+        <div class="options">
+            <div class="join">Join Room</div>
+            <div class="host">Host Room</div>
+            <form action="/chat" method="POST" class="join-form">
+                <input type="text" placeholder="Enter your username" name="joinusername" required>
+                <input type="text" placeholder="Enter the room code" name="roomcode" required>
+                <button type="submit">Join Now</button>
+            </form>
+            <form action="/" method="POST" class="host-form">
+                <input type="text" placeholder="Enter your username" name="hostusername" required>
+                <input type="text" placeholder="Enter room name" name="roomname" required>
+                <button type="submit">Host Now</button>
+            </form>
+        </div>
+    </section>
+    <section class="animation">
+        <ul class="animation-box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+</body>
+</html>
