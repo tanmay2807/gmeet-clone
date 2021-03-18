@@ -29,13 +29,16 @@ app.post("/", (req,res)=>{
 
 app.post("/chat", (req,res)=>{
 
-    if(rooms[req.body.roomcode] != null){
-        res.redirect(req.body.roomcode);
-    } else {
-        res.redirect("/");
-    };
+    // if(rooms[req.body.roomcode] != null){
+    //     res.redirect(req.body.roomcode);
+    // } else {
+    //     res.redirect("/");
+    // };
 
     io.to(req.body.roomcode).emit("username", req.body.joinusername);
+
+    res.redirect(req.body.roomcode);
+
 })
 
 io.on("connection", socket=>{
