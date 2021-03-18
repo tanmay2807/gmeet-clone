@@ -1,12 +1,11 @@
 const express = require('express')
 const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const PORT = process.env.PORT || 3000; 
-const socketio = require('socket.io')
-const io = socketio(server);
+const PORT = process.env.PORT || 3000
+var server = app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`)
+});
 
-server.listen(PORT, ()=> console.log(`Server running on port ${PORT}`));
+const io = require('socket.io')(server)
 
 const bodyParser = require("body-parser");
 app.use(express.static("static"));
@@ -57,11 +56,3 @@ app.get("/", (req,res)=>{
 });
 
 
-// const { ExpressPeerServer } = require('peer');
-// var server = app.listen(PORT, () => {
-//     console.log(`Server started on port ${PORT}`)
-// }); 
-// const peerServer = ExpressPeerServer(server, {
-//     path: '/'
-// });
-// app.use('/peerjs', peerServer);
