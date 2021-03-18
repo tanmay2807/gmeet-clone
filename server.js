@@ -4,7 +4,7 @@ const { ExpressPeerServer } = require('peer');
 const PORT = process.env.PORT || 3000
 var server = app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
-})
+});
 const peerServer = ExpressPeerServer(server, {
     path: '/'
 });

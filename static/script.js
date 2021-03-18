@@ -1,7 +1,7 @@
 var socket = io.connect();
 
 const myPeer = new Peer(undefined, {
-    host: '/',
+    host: 'https://pacific-harbor-06452.herokuapp.com/',
     port: '3001',
     secure: true
 })
