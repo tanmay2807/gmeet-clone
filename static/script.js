@@ -1,4 +1,4 @@
-var socket = io.connect(window.location.origin);
+var socket = io.connect(window.location.hostname);
 
 const myPeer = new Peer(undefined,{
     host: 'pacific-harbor-06452.herokuapp.com',
