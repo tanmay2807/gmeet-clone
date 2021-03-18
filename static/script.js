@@ -3,7 +3,8 @@ var socket = io.connect(window.location.hostname);
 const myPeer = new Peer(undefined,{
     host: 'pacific-harbor-06452.herokuapp.com',
     port: 443,
-    secure: true
+    secure: true,
+    path:'/'
 })
 
 myPeer.on("open", id=>{
