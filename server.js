@@ -19,16 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
 
-app.use(function(req,res,next){
-    if (req.secure) {
-        // request was via https, so do no special handling
-        next();
-} else {
-        // request was via http, so redirect to https
-        res.redirect('https://' + req.headers.host + req.url);
-}
-});
-
 app.post("/", (req,res)=>{
 
     rooms[req.body.roomname] = req.body.roomname;
@@ -39,17 +29,17 @@ app.post("/", (req,res)=>{
 
 app.post("/chat", (req,res)=>{
 
-    // if(rooms[req.body.roomcode] != null){
-    //     res.redirect(req.body.roomcode);
-    // } else {
-    //     res.redirect("/");
-    // };
+    if(rooms[req.body.roomcode] != null){
+        if(io.sockets.adapter.rooms[req.body.roomcode].length < 2){
+            res.redirect(req.body.roomcode);
+        } 
+    } else {
+        res.redirect("/");
+    };
 
     io.to(req.body.roomcode).emit("username", req.body.joinusername);
 
-    res.redirect(req.body.roomcode);
-
-})
+});
 
 io.on("connection", socket=>{
     socket.on("user-joined", (room, id)=>{
