@@ -46,8 +46,10 @@ app.post("/chat", (req,res)=>{
 });
 
 Object.keys(rooms).forEach(room =>{
-    if(io.sockets.adapter.rooms.get(room).size < 0){
-        delete rooms[room];
+    if(rooms[room] != null){
+        if(io.sockets.adapter.rooms.get(room).size < 0){
+            delete rooms[room];
+        }
     }
 });
 
