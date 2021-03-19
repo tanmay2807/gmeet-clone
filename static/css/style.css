@@ -436,6 +436,15 @@ html {
   font-size: 2.5rem;
 }
 
+.container .video .buttons .cancel:hover {
+  background-color: rgba(235, 64, 52, 0.8);
+}
+
+.container .video .buttons .cancel:active {
+  -webkit-transform: translate(-1px, -1px);
+          transform: translate(-1px, -1px);
+}
+
 .container .video .buttons .mic {
   margin: 1rem;
   height: 5rem;
@@ -460,6 +469,15 @@ html {
   font-size: 2.5rem;
 }
 
+.container .video .buttons .mic:hover {
+  background-color: #bbb;
+}
+
+.container .video .buttons .mic:active {
+  -webkit-transform: translate(-1px, -1px);
+          transform: translate(-1px, -1px);
+}
+
 .container .video .buttons .vid {
   margin: 1rem;
   height: 5rem;
@@ -482,6 +500,15 @@ html {
 .container .video .buttons .vid .fa {
   color: #fff;
   font-size: 2.5rem;
+}
+
+.container .video .buttons .vid:hover {
+  background-color: #bbb;
+}
+
+.container .video .buttons .vid:active {
+  -webkit-transform: translate(-1px, -1px);
+          transform: translate(-1px, -1px);
 }
 
 .container .message {
@@ -569,7 +596,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: auto;
+  overflow: scroll;
 }
 
 .container .message-window .connected {

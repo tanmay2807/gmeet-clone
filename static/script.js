@@ -14,7 +14,10 @@ myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
 });
 
+const chatdiv = document.getElementsByClassName("message-window")[0];
+
 socket.on("username", name=>{
+    chatdiv.scrollTop(chatdiv.offsetHeight);
     appendMessage(name);
     me = name;
 });
@@ -58,6 +61,7 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("vid")[0].addEventListener("click", (e)=>{
+        document.getElementsByClassName("vid")[0].classList.toggle("button");
         videoToggle();
     });
 });

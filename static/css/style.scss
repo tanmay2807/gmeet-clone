@@ -313,6 +313,12 @@ html{
                     color:#fff;
                     font-size:2.5rem;
                 }
+                &:hover{
+                    background-color: rgba(235, 64, 52,0.8);
+                }
+                &:active{
+                    transform: translate(-1px, -1px);
+                }
             }
             .mic{
                 margin:1rem;
@@ -329,6 +335,12 @@ html{
                     color:#fff;
                     font-size:2.5rem;
                 }
+                &:hover{
+                    background-color: #bbb;
+                }
+                &:active{
+                    transform: translate(-1px, -1px);
+                }
             }
             .vid{
                 margin:1rem;
@@ -344,6 +356,12 @@ html{
                 .fa{
                     color:#fff;
                     font-size:2.5rem;
+                }
+                &:hover{
+                    background-color: #bbb;
+                }
+                &:active{
+                    transform: translate(-1px, -1px);
                 }
             }
         }
@@ -400,7 +418,7 @@ html{
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: auto;
+            overflow: scroll;
             .connected{
                 height:max-content;
                 font-size:1.2rem;
