@@ -34,8 +34,10 @@ app.post("/chat", (req,res)=>{
 
     Object.values(rooms).forEach(room =>{
         if(room = req.body.roomcode){
-            key = true;
-        } 
+            return key = true;
+        } else {
+            key = false;
+        }
     })
 
     if(key){
