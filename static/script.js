@@ -65,11 +65,11 @@ navigator.mediaDevices.getUserMedia({
     document.getElementById("mic").addEventListener("click", (e)=>{
         var property = document.getElementById("mic");
         if (property.className != 'button') {
-            property.style.backgroundColor= "#ccc";
+            // property.style.backgroundColor= "#ccc";
             property.className = 'button';
         }
         else {
-            property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
+            // property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
             property.className = 'mic';
         }
         micToggle();
