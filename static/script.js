@@ -13,11 +13,13 @@ var me;
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
     users[id] = me;
+    console.log("1st");
 })
 
 socket.on("username", name=>{
     appendMessage(name);
     me = name;
+    console.log("2nd");
 });
 
 const myvideo = document.getElementsByClassName("video-me")[0];
@@ -60,8 +62,6 @@ navigator.mediaDevices.getUserMedia({
         videoToggle();
     });
 });
-
-
 
 socket.on("user-disconnected", userId =>{
     if(peers[userId]){
