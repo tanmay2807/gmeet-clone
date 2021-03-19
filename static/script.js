@@ -62,15 +62,15 @@ navigator.mediaDevices.getUserMedia({
         stream.getVideoTracks()[0].enabled = !(stream.getVideoTracks()[0].enabled);
     }
 
-    document.getElementsByClassName("mic")[0].addEventListener("click", (e)=>{
-        var property = document.getElementsByClassName("mic")[0];
+    document.getElementById("mic").addEventListener("click", (e)=>{
+        var property = document.getElementById("mic");
         if (property.className != 'button') {
             property.style.backgroundColor= "#ccc";
             property.className = 'button';
         }
         else {
             property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
-            property.className = '';
+            property.className = 'mic';
         }
         micToggle();
     });
@@ -79,15 +79,15 @@ navigator.mediaDevices.getUserMedia({
         stream.getAudioTracks()[0].enabled = !(stream.getAudioTracks()[0].enabled);
     }
 
-    document.getElementsByClassName("vid")[0].addEventListener("click", (e)=>{
-        var property = document.getElementsByClassName("vid")[0];
+    document.getElementById("vid").addEventListener("click", (e)=>{
+        var property = document.getElementById("vid");
         if (property.className != 'button') {
             property.style.backgroundColor= "#ccc";
             property.className = 'button';
         }
         else {
             property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
-            property.className = '';
+            property.className = 'vid';
         }
         videoToggle();
     });
