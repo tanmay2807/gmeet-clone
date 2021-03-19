@@ -18,19 +18,9 @@ const chatdiv = document.getElementsByClassName("message-window")[0];
 
 socket.on("username", name=>{
 
-    shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
     appendMessage(name);
     me = name;
-    if (!shouldScroll) {
-        scrollToBottom();
-    }
 });
-
-scrollToBottom();
-
-function scrollToBottom(){
-    chatdiv.scrollTop = chatdiv.scrollHeight;
-}
 
 const myvideo = document.getElementsByClassName("video-me")[0];
 myvideo.muted = true;
@@ -145,12 +135,25 @@ form.addEventListener("submit", (e)=>{
     if(message == ''){
         document.getElementsByTagName("button")[0].disabled = true;
     } else {
+
+        shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
+
+        if (!shouldScroll) {
+            scrollToBottom();
+        }
+
         appendmyMessage(message);
         document.getElementsByTagName("input")[0].value = '';
 
         socket.emit("user-message", {message: message, room: room});
     }
 });
+
+scrollToBottom();
+
+function scrollToBottom(){
+    chatdiv.scrollTop = chatdiv.scrollHeight;
+}
 
 socket.on("chat-message", data=>{
     appendotherMessage(data);
