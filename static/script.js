@@ -27,9 +27,6 @@ socket.on("host-username", name=>{
     me2 = name;
 });
 
-document.getElementsByClassName("vid")[0].style.backgroundColor = '#ccc';
-document.getElementsByClassName("mic")[0].style.backgroundColor = '#ccc';
-
 const myvideo = document.getElementsByClassName("video-me")[0];
 myvideo.muted = true;
 
@@ -66,7 +63,15 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("mic")[0].addEventListener("click", (e)=>{
-        document.getElementsByClassName("mic")[0].classList.toggle("button");
+        var property = document.getElementsByClassName("mic")[0];
+        if (property.className != 'button') {
+            property.style.backgroundColor= "#ccc";
+            property.className = 'button';
+        }
+        else {
+            property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
+            property.className = '';
+        }
         micToggle();
     });
 
@@ -75,7 +80,15 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("vid")[0].addEventListener("click", (e)=>{
-        document.getElementsByClassName("vid")[0].classList.toggle("button");
+        var property = document.getElementsByClassName("vid")[0];
+        if (property.className != 'button') {
+            property.style.backgroundColor= "#ccc";
+            property.className = 'button';
+        }
+        else {
+            property.style.backgroundColor = "rgba(235, 64, 52,0.5)";
+            property.className = '';
+        }
         videoToggle();
     });
 });
@@ -138,6 +151,10 @@ function appendMessage(message){
 };
 
 function appendmyMessage(message){
+    shouldScroll = chatdiv.scrollTop + chatdiv.clientHeight === chatdiv.scrollHeight;
+    if (!shouldScroll) {
+        scrollToBottom();
+    }
     var newElement = document.createElement("div");
     newElement.innerHTML = `${message}`;
     var connectedMessage = document.getElementsByClassName("message-window")[0].appendChild(newElement);
@@ -155,14 +172,8 @@ form.addEventListener("submit", (e)=>{
         document.getElementsByTagName("button")[0].disabled = true;
     } else {
 
-        shouldScroll = chatdiv.scrollTop + chatdiv.clientHeight === chatdiv.scrollHeight;
-
         appendmyMessage(message);
         document.getElementsByTagName("input")[0].value = '';
-
-        if (!shouldScroll) {
-            scrollToBottom();
-        }
 
         socket.emit("user-message", {message: message, room: room});
     }
@@ -179,6 +190,10 @@ socket.on("chat-message", data=>{
 });
 
 function appendotherMessage(message){
+    shouldScroll = chatdiv.scrollTop + chatdiv.clientHeight === chatdiv.scrollHeight;
+    if (!shouldScroll) {
+        scrollToBottom();
+    }
     var newElement = document.createElement("div");
     newElement.innerHTML = `${message}`;
     var connectedMessage = document.getElementsByClassName("message-window")[0].appendChild(newElement);
