@@ -10,6 +10,7 @@ const myPeer = new Peer(undefined,{
 var users = {};
 var host = {};
 var me = 'check';
+var me2 = 'check';
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
@@ -23,7 +24,7 @@ socket.on("username", name=>{
 });
 
 socket.on("host-username", name=>{
-    me = name;
+    me2 = name;
 });
 
 document.getElementsByClassName("vid")[0].style.backgroundColor = '#ccc';
