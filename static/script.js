@@ -8,6 +8,7 @@ const myPeer = new Peer(undefined,{
 });
 
 var users = {};
+var host = {};
 var me = 'check';
 
 myPeer.on("open", id=>{
@@ -18,6 +19,10 @@ const chatdiv = document.getElementsByClassName("message-window")[0];
 
 socket.on("username", name=>{
     appendMessage(name);
+    me = name;
+});
+
+socket.on("host-username", name=>{
     me = name;
 });
 
@@ -68,8 +73,13 @@ navigator.mediaDevices.getUserMedia({
 socket.on("user-disconnected", userId =>{
     if(peers[userId]){
         peers[userId].close();
+    };
+
+    if(users[userId] != null){
+        appendDisMessage(users[userId]);
+    } else {
+        appendDisMessage(host[userId]);
     }
-    appendDisMessage(users[userId]);
 });
 
 function appendDisMessage(message){

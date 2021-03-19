@@ -24,7 +24,7 @@ app.post("/", (req,res)=>{
     rooms[req.body.roomname] = req.body.roomname;
     res.redirect(req.body.roomname);
 
-    io.to(req.body.roomname).emit("username", req.body.hostusername);
+    io.to(req.body.roomname).emit("host-username", req.body.hostusername);
 });
 
 app.post("/chat", (req,res)=>{
