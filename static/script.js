@@ -17,7 +17,7 @@ myPeer.on("open", id=>{
 const chatdiv = document.getElementsByClassName("message-window")[0];
 
 socket.on("username", name=>{
-    chatdiv.scrollTop(chatdiv.offsetHeight);
+    chatdiv.scrollTop(chatdiv.style.height);
     appendMessage(name);
     me = name;
 });

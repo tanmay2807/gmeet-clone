@@ -441,8 +441,8 @@ html {
 }
 
 .container .video .buttons .cancel:active {
-  -webkit-transform: translate(-1px, -1px);
-          transform: translate(-1px, -1px);
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
 }
 
 .container .video .buttons .mic {
@@ -450,7 +450,6 @@ html {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -474,8 +473,8 @@ html {
 }
 
 .container .video .buttons .mic:active {
-  -webkit-transform: translate(-1px, -1px);
-          transform: translate(-1px, -1px);
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
 }
 
 .container .video .buttons .vid {
@@ -507,8 +506,8 @@ html {
 }
 
 .container .video .buttons .vid:active {
-  -webkit-transform: translate(-1px, -1px);
-          transform: translate(-1px, -1px);
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
 }
 
 .container .message {
@@ -596,7 +595,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .container .message-window .connected {
