@@ -7,7 +7,7 @@ var server = app.listen(PORT, () => {
 });
 const peerServer = ExpressPeerServer(server, {
     path: '/'
-  });
+});
   
 const io = require('socket.io')(server);
 const bodyParser = require("body-parser");
@@ -29,7 +29,7 @@ app.post("/", (req,res)=>{
 
 app.post("/chat", (req,res)=>{
 
-    if(rooms[req.body.roomcode] != undefined){
+    if(rooms[req.body.roomcode]){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
