@@ -738,7 +738,7 @@ html {
 }
 
 .button:hover {
-  background-color: #bbb;
+  background-color: rgba(235, 64, 52, 0.7);
 }
 
 .button:active {
