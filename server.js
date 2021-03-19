@@ -30,7 +30,7 @@ app.post("/", (req,res)=>{
 app.post("/chat", (req,res)=>{
 
     if(rooms[req.body.roomcode] != null){
-        if(io.sockets.adapter.rooms[req.body.roomcode].length < 2){
+        if(io.nsps['/'].adapter.rooms[req.body.roomcode].length < 2){
             res.redirect(req.body.roomcode);
         } 
     } else {
@@ -48,6 +48,7 @@ io.on("connection", socket=>{
 
         socket.on("disconnect", ()=>{
             socket.to(room).broadcast.emit("user-disconnected", id);
+            socket.leave(room);
         })
     });
     socket.on("user-message", data=>{
