@@ -12,12 +12,12 @@ var me;
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
-    users[id] = me;
+    me = users[id] ;
 })
 
 socket.on("username", name=>{
     appendMessage(name);
-    me = users[name] ;
+    name = me;
 });
 
 const myvideo = document.getElementsByClassName("video-me")[0];
