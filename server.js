@@ -18,13 +18,15 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
+var host = '';
 
 app.post("/", (req,res)=>{
 
     rooms[req.body.roomname] = req.body.roomname;
     res.redirect(req.body.roomname);
 
-    io.to(req.body.roomname).emit("host-username", req.body.hostusername);
+    host = req.body.hostusername;
+
 });
 
 app.post("/chat", (req,res)=>{
@@ -33,6 +35,7 @@ app.post("/chat", (req,res)=>{
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
+            io.to(req.body.roomname).emit("host-username", host);
 
             res.redirect(req.body.roomcode);
 
@@ -60,6 +63,7 @@ io.on("connection", socket=>{
 
         socket.on("disconnect", ()=>{
             socket.to(room).broadcast.emit("user-disconnected", id);
+            host = '';
             socket.leave(room);
         })
     });
