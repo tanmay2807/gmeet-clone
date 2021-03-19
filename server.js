@@ -30,7 +30,7 @@ app.post("/", (req,res)=>{
 app.post("/chat", (req,res)=>{
 
     if(rooms[req.body.roomcode] != null){
-        if(io.nsps['/'].adapter.rooms[req.body.roomcode].length < 2){
+        if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
             res.redirect(req.body.roomcode);
         } 
     } else {
