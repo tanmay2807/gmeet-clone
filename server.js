@@ -40,11 +40,10 @@ app.post("/chat", (req,res)=>{
         }
     })
 
-    if(key){
+    if(io.sockets.adapter.rooms.get(req.body.roomcode)){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
-            io.to(req.body.roomcode).emit("host-username", host);
 
             res.redirect(req.body.roomcode);
 
@@ -82,7 +81,7 @@ io.on("connection", socket=>{
 })
 
 app.get("/:room", (req,res)=>{
-    res.render("room", {room: req.params.room});
+    res.render("room", {room: req.params.room, hostname: host});
 });
 
 app.get("/", (req,res)=>{
