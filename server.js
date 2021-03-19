@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
 var host ;
+var key = false;
 
 app.post("/", (req,res)=>{
 
@@ -31,7 +32,13 @@ app.post("/", (req,res)=>{
 
 app.post("/chat", (req,res)=>{
 
-    if(rooms[req.body.roomcode] == true){
+    Object.keys(rooms).forEach(room =>{
+        if(room = req.body.roomcode){
+            key = true;
+        } 
+    })
+
+    if(key){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
