@@ -47,7 +47,13 @@ navigator.mediaDevices.getUserMedia({
     });
 
     socket.on("user-connected", userId=>{
-        users[userId] = me;
+        
+        if(users[userId] != null){
+            users[userId] = me;
+        } else {
+            host[userId] = me;
+        }
+        
         connectToNewUser(userId, stream);
     });
 
