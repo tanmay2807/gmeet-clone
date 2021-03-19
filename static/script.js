@@ -65,11 +65,7 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("mic")[0].addEventListener("click", (e)=>{
-        if(document.getElementsByClassName("mic")[0].style.backgroundColor == '#ccc'){
-            document.getElementsByClassName("mic")[0].style.backgroundColor = 'rgba(235, 64, 52,0.5)';
-        } else {
-            document.getElementsByClassName("mic")[0].style.backgroundColor = '#ccc'
-        }
+        document.getElementsByClassName("mic")[0].classList.toggle("button");
         micToggle();
     });
 
@@ -78,11 +74,7 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("vid")[0].addEventListener("click", (e)=>{
-        if(document.getElementsByClassName("vid")[0].style.backgroundColor == '#ccc'){
-            document.getElementsByClassName("vid")[0].style.backgroundColor = 'rgba(235, 64, 52,0.5)';
-        } else {
-            document.getElementsByClassName("vid")[0].style.backgroundColor = '#ccc'
-        }
+        document.getElementsByClassName("vid")[0].classList.toggle("button");
         videoToggle();
     });
 });

@@ -129,6 +129,10 @@ html {
   cursor: pointer;
 }
 
+.intro .options .join:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 .intro .options .host {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 1rem 1rem;
@@ -136,6 +140,10 @@ html {
   margin: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+.intro .options .host:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .intro .options .random {
@@ -450,7 +458,6 @@ html {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -483,7 +490,6 @@ html {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
