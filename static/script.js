@@ -63,7 +63,15 @@ socket.on("user-disconnected", userId =>{
     if(peers[userId]){
         peers[userId].close();
     }
+    appendDisMessage();
 });
+
+function appendDisMessage(message){
+    var newElement = document.createElement("div");
+    newElement.innerHTML = `${message} got disconnected`;
+    var connectedMessage = document.getElementsByClassName("message-window")[0].appendChild(newElement);
+    connectedMessage.classList.add("connected");
+};
 
 function connectToNewUser(userId, stream){
     const call = myPeer.call(userId, stream); 
