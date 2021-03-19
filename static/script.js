@@ -12,12 +12,11 @@ var me = 'check';
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
-})
+});
 
 socket.on("username", name=>{
     appendMessage(name);
     me = name;
-    console.log(me);
 });
 
 const myvideo = document.getElementsByClassName("video-me")[0];
@@ -50,6 +49,7 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("mic")[0].addEventListener("click", (e)=>{
+        document.getElementsByClassName("mic")[0].classList.toggle("button");
         micToggle();
     });
 
