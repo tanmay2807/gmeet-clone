@@ -33,7 +33,7 @@ app.post("/", (req,res)=>{
 app.post("/chat", (req,res)=>{
 
     Object.values(rooms).forEach(room =>{
-        if(room = req.body.roomcode){
+        if(room == req.body.roomcode){
             return key = true;
         } else {
             key = false;
