@@ -29,7 +29,7 @@ app.post("/", (req,res)=>{
 
 app.post("/chat", (req,res)=>{
 
-    if(rooms[req.body.roomcode] != null){
+    if(rooms[req.body.roomcode] != undefined){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
