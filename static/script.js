@@ -7,13 +7,17 @@ const myPeer = new Peer(undefined,{
     path:'/peerjs'
 });
 
+var users = {};
+var me;
+
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
-    console.log(id);
+    users[id] = me;
 })
 
 socket.on("username", name=>{
     appendMessage(name);
+    me = users[name] ;
 });
 
 const myvideo = document.getElementsByClassName("video-me")[0];
@@ -63,7 +67,7 @@ socket.on("user-disconnected", userId =>{
     if(peers[userId]){
         peers[userId].close();
     }
-    appendDisMessage();
+    appendDisMessage(users[userId]);
 });
 
 function appendDisMessage(message){
