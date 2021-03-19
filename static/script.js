@@ -17,7 +17,6 @@ myPeer.on("open", id=>{
 const chatdiv = document.getElementsByClassName("message-window")[0];
 
 socket.on("username", name=>{
-
     appendMessage(name);
     me = name;
 });
@@ -136,14 +135,14 @@ form.addEventListener("submit", (e)=>{
         document.getElementsByTagName("button")[0].disabled = true;
     } else {
 
-        shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
+        shouldScroll = chatdiv.scrollTop + chatdiv.clientHeight === chatdiv.scrollHeight;
+
+        appendmyMessage(message);
+        document.getElementsByTagName("input")[0].value = '';
 
         if (!shouldScroll) {
             scrollToBottom();
         }
-
-        appendmyMessage(message);
-        document.getElementsByTagName("input")[0].value = '';
 
         socket.emit("user-message", {message: message, room: room});
     }
