@@ -17,10 +17,20 @@ myPeer.on("open", id=>{
 const chatdiv = document.getElementsByClassName("message-window")[0];
 
 socket.on("username", name=>{
-    chatdiv.scrollTop(chatdiv.style.height);
+
+    shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
     appendMessage(name);
     me = name;
+    if (!shouldScroll) {
+        scrollToBottom();
+    }
 });
+
+scrollToBottom();
+
+function scrollToBottom(){
+    chatdiv.scrollTop = chatdiv.scrollHeight;
+}
 
 const myvideo = document.getElementsByClassName("video-me")[0];
 myvideo.muted = true;

@@ -450,6 +450,7 @@ html {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
+  background-color: #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
