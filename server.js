@@ -30,8 +30,12 @@ app.post("/", (req,res)=>{
 app.post("/chat", (req,res)=>{
 
     if(rooms[req.body.roomcode] != null){
-        if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 3){
+        if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
+
+            io.to(req.body.roomcode).emit("username", req.body.joinusername);
+
             res.redirect(req.body.roomcode);
+
         } else {
             res.redirect("/");
         }
@@ -39,11 +43,10 @@ app.post("/chat", (req,res)=>{
         res.redirect("/");
     };
 
-    io.to(req.body.roomcode).emit("username", req.body.joinusername);
 });
 
 Object.keys(rooms).forEach(room =>{
-    if(io.sockets.adapter.rooms.get(room).size == 0){
+    if(io.sockets.adapter.rooms.get(room).size < 0){
         delete rooms[room];
     }
 });
