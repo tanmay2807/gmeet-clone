@@ -26,6 +26,9 @@ socket.on("host-username", name=>{
     me = name;
 });
 
+document.getElementsByClassName("vid")[0].style.backgroundColor = '#ccc';
+document.getElementsByClassName("mic")[0].style.backgroundColor = '#ccc';
+
 const myvideo = document.getElementsByClassName("video-me")[0];
 myvideo.muted = true;
 
@@ -47,7 +50,7 @@ navigator.mediaDevices.getUserMedia({
     });
 
     socket.on("user-connected", userId=>{
-        
+
         if(users[userId] != null){
             users[userId] = me;
         } else {
@@ -62,7 +65,11 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("mic")[0].addEventListener("click", (e)=>{
-        document.getElementsByClassName("mic")[0].classList.toggle("button");
+        if(document.getElementsByClassName("mic")[0].style.backgroundColor == '#ccc'){
+            document.getElementsByClassName("mic")[0].style.backgroundColor = 'rgba(235, 64, 52,0.5)';
+        } else {
+            document.getElementsByClassName("mic")[0].style.backgroundColor = '#ccc'
+        }
         micToggle();
     });
 
@@ -71,7 +78,11 @@ navigator.mediaDevices.getUserMedia({
     }
 
     document.getElementsByClassName("vid")[0].addEventListener("click", (e)=>{
-        document.getElementsByClassName("vid")[0].classList.toggle("button");
+        if(document.getElementsByClassName("vid")[0].style.backgroundColor == '#ccc'){
+            document.getElementsByClassName("vid")[0].style.backgroundColor = 'rgba(235, 64, 52,0.5)';
+        } else {
+            document.getElementsByClassName("vid")[0].style.backgroundColor = '#ccc'
+        }
         videoToggle();
     });
 });

@@ -18,7 +18,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
-var host = '';
+var host ;
 
 app.post("/", (req,res)=>{
 
@@ -35,7 +35,7 @@ app.post("/chat", (req,res)=>{
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
 
             io.to(req.body.roomcode).emit("username", req.body.joinusername);
-            io.to(req.body.roomname).emit("host-username", host);
+            io.to(req.body.roomcode).emit("host-username", host);
 
             res.redirect(req.body.roomcode);
 
