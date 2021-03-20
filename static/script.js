@@ -9,8 +9,7 @@ const myPeer = new Peer(undefined,{
 
 var users = {};
 var host = {};
-var me = 'check';
-var me2 = 'check';
+var me = 'User';
 
 myPeer.on("open", id=>{
     socket.emit("user-joined", room, id);
@@ -21,10 +20,6 @@ const chatdiv = document.getElementsByClassName("message-window")[0];
 socket.on("username", name=>{
     appendMessage(name);
     me = name;
-});
-
-socket.on("host-username", name=>{
-    me2 = name;
 });
 
 const myvideo = document.getElementsByClassName("video-me")[0];
@@ -52,7 +47,7 @@ navigator.mediaDevices.getUserMedia({
         if(users[userId] != null){
             users[userId] = me;
         } else {
-            host[userId] = me;
+            host[userId] = 'User';
         }
         
         connectToNewUser(userId, stream);
@@ -168,6 +163,8 @@ form.addEventListener("submit", (e)=>{
         document.getElementsByTagName("button")[0].disabled = true;
     } else {
 
+        document.getElementsByTagName("button")[0].disabled = false;
+
         appendmyMessage(message);
         document.getElementsByTagName("input")[0].value = '';
 
@@ -178,7 +175,7 @@ form.addEventListener("submit", (e)=>{
 scrollToBottom();
 
 function scrollToBottom(){
-    chatdiv.scrollTop = chatdiv.scrollHeight;
+    chatdiv.scrollTop = chatdiv.scrollHeight + 10;
 }
 
 socket.on("chat-message", data=>{

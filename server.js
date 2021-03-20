@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
 var host ;
-var key = false;
 
 app.post("/", (req,res)=>{
 
@@ -31,14 +30,6 @@ app.post("/", (req,res)=>{
 });
 
 app.post("/chat", (req,res)=>{
-
-    Object.values(rooms).forEach(room =>{
-        if(room == req.body.roomcode){
-            return key = true;
-        } else {
-            key = false;
-        }
-    })
 
     if(io.sockets.adapter.rooms.get(req.body.roomcode)){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
@@ -81,7 +72,11 @@ io.on("connection", socket=>{
 })
 
 app.get("/:room", (req,res)=>{
-    res.render("room", {room: req.params.room, hostname: host});
+    if(rooms[req.params.room]){
+        res.render("room", {room: req.params.room, hostname: host});
+    } else {
+        res.redirect("/");
+    }
 });
 
 app.get("/", (req,res)=>{
