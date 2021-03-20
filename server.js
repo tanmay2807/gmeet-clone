@@ -19,7 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var rooms = {};
 var host ;
-var userkey = false;
 
 app.post("/", (req,res)=>{
 
@@ -27,13 +26,10 @@ app.post("/", (req,res)=>{
     res.redirect(req.body.roomname);
 
     host = req.body.hostusername;
-    userkey = true;
 
 });
 
 app.post("/chat", (req,res)=>{
-
-    userkey = true;
 
     if(io.sockets.adapter.rooms.get(req.body.roomcode)){
         if(io.sockets.adapter.rooms.get(req.body.roomcode).size < 2){
@@ -66,7 +62,6 @@ io.on("connection", socket=>{
 
         socket.on("disconnect", ()=>{
             socket.to(room).broadcast.emit("user-disconnected", id);
-            userkey = false;
             host = '';
             socket.leave(room);
         })
@@ -77,13 +72,10 @@ io.on("connection", socket=>{
 })
 
 app.get("/:room", (req,res)=>{
-
-    if(userkey){
-        if(rooms[req.params.room]){
-            res.render("room", {room: req.params.room, hostname: host});
-        } else {
-            res.redirect("/");
-        }
+    if(rooms[req.params.room]){
+        res.render("room", {room: req.params.room, hostname: host});
+    } else {
+        res.redirect("/");
     }
 });
 
