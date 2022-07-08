@@ -1,13 +1,13 @@
-// var socket = io.connect(window.location.hostname);
-var socket  = io.connect();
+var socket = io.connect(window.location.hostname);
+// var socket  = io.connect();
 
 const myPeer = new Peer(undefined,{
     host: location.hostname,
-    // port: 443,
-    port: 3001,
-    // secure: true,
-    path:'/'
-    // path: '/peerjs'
+    port: 443,
+    // port: 3001,
+    secure: true,
+    // path:'/'
+    path: '/peerjs'
 });
 
 myPeer.on('open', id=>{
