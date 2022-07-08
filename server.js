@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const { ExpressPeerServer } = require('peer');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // port
 var server = app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)
 });
@@ -17,7 +17,7 @@ app.use(express.static("static"));
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var roomInfo = {}; //room vs roomname || username || age || gender
+var roomInfo = {}; // room vs roomname || username || age || gender
 var users = []; // id vs name
 
 // host in
@@ -33,7 +33,7 @@ app.post("/chat", (req,res)=>{
     var info = req.body;
 
     if(roomInfo[info.roomcode]==undefined) res.send("Room doesn't exist");
-    else if(roomInfo[info.roomcode].length==1) {
+    else if(roomInfo[info.roomcode].length==1){
         roomInfo[info.roomcode].push([info.roomcode,info.joinusername,info.userage,info.gender]);
         res.redirect(info.roomcode);
     }
