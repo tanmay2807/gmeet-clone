@@ -273,6 +273,31 @@ html{
     width:100vw;
     z-index:2;
     position: fixed;
+    .access{
+        position: absolute;
+        top:10rem;
+        font-family: sans-serif;
+        height:15rem;
+        display: none;
+        z-index: 20;
+        font-size:1.7rem;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        width:30rem;
+        left:50%;
+        transform: translateX(-50%);
+        border-radius: 2rem;
+        background-color: rgba(255,255,255,0.9);
+        &-message{
+            display: flex;
+            // width:100%;
+            &-option{
+                margin-right:3rem;
+                cursor: pointer;
+            }
+        }
+    }
     .video{
         height:100%;
         width:50%;
@@ -285,6 +310,7 @@ html{
         }
         .video-me{
             position: absolute;
+            transform: rotateY(180deg);
             z-index:5;
             top:1rem;
             left:1rem;
@@ -394,7 +420,7 @@ html{
             justify-content: flex-start;
             border-radius: 1rem;
             .roomcode{
-                font-size:1.5rem;
+                font-size:1.7rem;
                 color:#333;
                 padding:3rem 0.5rem;
             }
@@ -403,8 +429,8 @@ html{
                 top:0.3rem;
                 cursor: pointer;
                 right:0.3rem;
-                height:2rem;
-                width:2rem;
+                height:3rem;
+                width:3rem;
                 border-radius: 50%;
                 background-color: rgba(0,0,0,0.1);
                 display: flex;
@@ -474,7 +500,6 @@ html{
             height:7%;
             width:100%;
             background-color: #fff;
-
             form{
                 height:100%;
                 width:100%;
@@ -484,27 +509,24 @@ html{
                 input{
                     height:100%;
                     width:90%;
-                    margin:0;
                     outline:none;
                     border:1px solid white;
                     color:#222;
                 }
                 button{
                     height:100%;
-                    width:6%;
+                    width:10%;
                     border:1px solid #fff;
-                    margin-left:2%;
+                    // margin-left:2%;
                     background-color: #fff;
                     cursor: pointer;
                     outline: none;
-
                     i{
                         color: #222;
-                        height:60%;
+                        height:26%;
                         width:100%;
                         justify-self: center;
                         font-size:2rem;
-                        
                     }
                 }
             }

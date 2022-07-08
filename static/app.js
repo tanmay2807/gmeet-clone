@@ -1,3 +1,5 @@
+// join form button
+
 const join = document.getElementsByClassName("join")[0];
 
 document.getElementsByClassName("join-form")[0].style.display = "none";
@@ -14,6 +16,9 @@ join.addEventListener("click", (e)=>{
         document.getElementsByClassName("join-form")[0].style.display = "none";
     } 
 });
+
+
+// host form button
 
 const host = document.getElementsByClassName("host")[0];
 

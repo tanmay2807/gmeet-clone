@@ -17,7 +17,13 @@
 <body>
 
     <section class="container">
-
+        <div class="access">
+            <div class="access-message">Do you want to let them join ?</div>
+            <div class="access-message">
+                <div class="access-message-option">Yes</div>
+                <div class="access-message-option">No</div>
+            </div>
+        </div>
         <div class="video">
             <video class="video-you"></video>
             <video class="video-me"></video>
@@ -30,7 +36,7 @@
 
         <div class="message">
             <div class="room-info">
-                <div class="roomcode">Your room code: <%= room%></div>
+                <div class="roomcode">Your room code:  <b><%=room%></b></div>
                 <div class="close">X</div>
             </div>
             <div class="message-window"></div>
